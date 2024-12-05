@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Star Wars Explorer</title>
- <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Star Wars Explorer</h1>
+    <h1>Star Wars Explore</h1>
     <nav>
       <a href="#" onclick="loadCategory('films')">Films</a>
       <a href="#" onclick="loadCategory('people')">People</a>
@@ -21,6 +21,27 @@
     <div id="card-container"></div>
     <button id="random-button" style="display: none;" onclick="fetchRandomItem()">Show Random</button>
   </div>
+
+  <!-- Mapeamento de imagens embutido no HTML -->
+  <script id="background-images" type="application/json">
+    {
+      "films": {
+        "A New Hope": "url('images/a-new-hope.jpg')",
+        "The Empire Strikes Back": "url('images/empire-strikes-back.jpg')",
+        "Return of the Jedi": "url('images/return-of-the-jedi.jpg')"
+      },
+      "people": {
+        "Luke Skywalker": "url('images/luke-skywalker.jpg')",
+        "Darth Vader": "url('images/darth-vader.jpg')",
+        "Leia Organa": "url('images/leia-organa.jpg')"
+      },
+      "planets": {
+        "Tatooine": "url('images/tatooine.jpg')",
+        "Alderaan": "url('images/alderaan.jpg')",
+        "Yavin IV": "url('images/yavin-iv.jpg')"
+      }
+    }
+  </script>
 
   <script src="script.js"></script>
 </body>
