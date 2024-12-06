@@ -52,6 +52,10 @@ nav a {
 .container {
 background-color: #000000;
   background-image: url(imagnes/star-wars-backgrounds-29_9e72b83c.png) ;
+  background-size: 100% 100%;
+  position: relative;
+  height: 94vh;
+  padding: 10px
 }
 
 .card {
