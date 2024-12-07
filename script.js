@@ -1,12 +1,12 @@
 const BASE_URL = 'https://swapi.dev/api';
 let currentCategory = '';
 
-// Obter mapeamento de imagens do HTML
+
 const backgroundImages = JSON.parse(
   document.getElementById('background-images').textContent
 );
 
-// Carregar categoria selecionada
+
 function loadCategory(category) {
   currentCategory = category;
   document.getElementById('category-title').innerText = `Category: ${category.toUpperCase()}`;
@@ -15,7 +15,7 @@ function loadCategory(category) {
   fetchRandomItem();
 }
 
-// Buscar um item aleatório da categoria selecionada
+
 async function fetchRandomItem() {
   if (!currentCategory) return;
   try {
@@ -30,8 +30,7 @@ async function fetchRandomItem() {
   }
 }
 
-// Exibir os dados no card
-// Exibir os dados no card, incluindo imagem
+
 function displayCard(data) {
   const cardContainer = document.getElementById('card-container');
   const itemName = data.name || data.title;
@@ -57,8 +56,7 @@ function displayCard(data) {
 }
 
 
-// Atualizar a imagem de fundo com base no item
-// Atualizar a imagem de fundo com base no item
+
 function updateBackground(itemName) {
   const defaultImage = "images/default.jpg";
   const imageUrl = backgroundImages[currentCategory]?.[itemName] || defaultImage;
