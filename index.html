@@ -8,11 +8,14 @@
 </head>
 <body>
   <header>
-    <h1>Star Wars</h1>
+    <h1>Star Wars </h1>
     <nav>
       <a href="#" onclick="loadCategory('films')">Films</a>
       <a href="#" onclick="loadCategory('people')">People</a>
       <a href="#" onclick="loadCategory('planets')">Planets</a>
+      <a href="#" onclick="loadCategory('species')">Species</a>
+      <a href="#" onclick="loadCategory('starships')">Starships</a>
+      <a href="#" onclick="loadCategory('vehicles')">Vehicles</a>
     </nav>
   </header>
 
@@ -22,28 +25,73 @@
     <button id="random-button" style="display: none;" onclick="fetchRandomItem()">Show Random</button>
   </div>
 
-  <!-- Mapeamento de imagens embutido no HTML -->
   <script id="background-images" type="application/json">
     {
       "films": {
-        "A New Hope": "url('images/a-new-hope.jpg')",
-        "The Empire Strikes Back": "url('images/empire-strikes-back.jpg')",
-        "Return of the Jedi": "url('images/return-of-the-jedi.jpg')"
+        "A New Hope": "images/a-new-hope.jpg",
+        "The Empire Strikes Back": "images/the-empire-strikes-back.jpg",
+        "Return of the Jedi": "images/return-of-the-jedi.jpg",
+        "The Phantom Menace": "img-films/the-phantom-menace.jpg",
+        "Attack of the Clones": "images/attack-of-the-clones.jpg",
+        "Revenge of the Sith": "images/revenge-of-the-sith.jpg"
       },
       "people": {
-        "Luke Skywalker": "url('images/luke-skywalker.jpg')",
-        "Darth Vader": "url('images/darth-vader.jpg')",
-        "Leia Organa": "url('images/leia-organa.jpg')",
-        "R2-D2": "url"
+        "Luke Skywalker": "img-people/skywalker.jpg",
+        "C-3PO": "img-people/c-3po.jpg",
+        "R2-D2": "img-people/r2-d2.jpg",
+        "Darth Vader": "img-people/darth-vader.jpg",
+        "Leia Organa": "img-people/leia-organa.jpg",
+        "Obi-Wan Kenobi": "img-people/obi-wan-kenobi.jpg",
+        "Yoda": "img-people/yoda.jpg",
+        "Palpatine": "img-people/palpatine.jpg",
+        "Boba Fett": "img-people/boba-fett.jpg",
+        "Owen Lars": "img-people/owen-lars.jpg",
+        "Beru Whitesun lars": "img-people/beru.jpg",
+        "Biggs Darklighter": "img-people/biggs-darklighter.jpg",
+        "R5-D4": "img-people/r5-d4.jpg"
       },
       "planets": {
-        "Tatooine": "url('images/tatooine.jpg')",
-        "Alderaan": "url('images/alderaan.jpg')",
-        "Yavin IV": "url('images/yavin-iv.jpg')"
+        "Tatooine": "images/tatooine.jpg",
+        "Alderaan": "images/alderaan.jpg",
+        "Hoth": "images/hoth.jpg",
+        "Dagobah": "images/dagobah.jpg",
+        "Endor": "images/endor.jpg",
+        "Naboo": "images/naboo.jpg",
+        "Coruscant": "images/coruscant.jpg"
+      },
+      "species": {
+        "Wookiee": "img-species/wookiee.jpg",
+        "Droid": "img-species/droid.jpg",
+        "Human": "img-species/human.jpg",
+        "Ewok": "img-species/ewok.jpg",
+        "Gungan": "img-species/gungan.jpg",
+        "Mon Calamari": "img-species/mon-calamari.jpg"
+      },
+      "starships": {
+        "X-wing": "images/x-wing.jpg",
+        "TIE Advanced x1": "images/tie-advanced.jpg",
+        "Millennium Falcon": "images/millennium-falcon.jpg",
+        "Star Destroyer": "images/star-destroyer.jpg",
+        "Death Star": "images/death-star.jpg",
+        "Slave 1": "images/slave-1.jpg",
+        "Imperial shuttle": "images/imperial-shuttle.jpg"
+      },
+      "vehicles": {
+        "Sand Crawler": "images/sand-crawler.jpg",
+        "T-16 skyhopper": "images/t-16-skyhopper.jpg",
+        "Speeder bike": "images/speeder-bike.jpg",
+        "AT-AT": "images/at-at.jpg",
+        "AT-ST": "images/at-st.jpg",
+        "Snowspeeder": "images/snowspeeder.jpg",
+        "TIE Bomber": "images/tie-bomber.jpg"
       }
     }
   </script>
+  
 
+  
+  
+  
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-// script.js
 const BASE_URL = 'https://swapi.dev/api';
 let currentCategory = '';
 
@@ -32,11 +31,17 @@ async function fetchRandomItem() {
 }
 
 // Exibir os dados no card
+// Exibir os dados no card, incluindo imagem
 function displayCard(data) {
   const cardContainer = document.getElementById('card-container');
+  const itemName = data.name || data.title;
+  const defaultImage = "images/default.jpg";
+  const imageUrl = backgroundImages[currentCategory]?.[itemName] || defaultImage;
+
   cardContainer.innerHTML = `
     <div class="card">
-      <h3>${data.name || data.title}</h3>
+      <img src="${imageUrl}" alt="${itemName}" style="width: 100%; border-radius: 8px 8px 0 0;">
+      <h3>${itemName}</h3>
       <ul>
         ${Object.entries(data)
           .map(([key, value]) => {
@@ -51,9 +56,12 @@ function displayCard(data) {
   `;
 }
 
+
+// Atualizar a imagem de fundo com base no item
 // Atualizar a imagem de fundo com base no item
 function updateBackground(itemName) {
-  const defaultBackground = "url('images/default.jpg')";
-  const background = backgroundImages[currentCategory]?.[itemName] || defaultBackground;
-  document.body.style.backgroundImage = background;
+  const defaultImage = "images/default.jpg";
+  const imageUrl = backgroundImages[currentCategory]?.[itemName] || defaultImage;
+  document.body.style.backgroundImage = `url('${imageUrl}')`;
 }
+

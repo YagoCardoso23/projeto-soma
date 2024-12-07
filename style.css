@@ -22,21 +22,21 @@ body {
   
 }
 
+
 h1{
   font-family:'star';
   font-size: 50px;
 }
 
 h2{
-  color: #f0f0f0;
-
+ 
   margin: 0px;
 }
 
 
 header {
   
-  background-image: url(imagnes/star-wars-backgrounds-29_9e72b83c.png) ;
+  background-image: url(imagens/star-wars-backgrounds-29_9e72b83c.png);
   color: white;
   padding: 1em;
  
@@ -51,12 +51,13 @@ nav a {
 
 .container {
 background-color: #000000;
-  background-image: url(imagnes/star-wars-backgrounds-29_9e72b83c.png) ;
+  background-image: url(imagens/star-wars-backgrounds-29_9e72b83c.png) ;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover; 
   background-attachment: fixed;
   height: 90vh;
+  
 
 }
 
@@ -67,6 +68,7 @@ background-color: #000000;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   max-width: 400px;
+ text-align: left;
 }
 
 button {
@@ -87,4 +89,26 @@ button {
 button:hover {
   color: #000000;
   background-color: #f0f0f0;
+}
+
+.card img {
+  width: 100%; /* Ajusta a largura para ocupar todo o espaço do card */
+  height: auto; /* Mantém a proporção original da imagem */
+  max-height: 200px; /* Define uma altura máxima para evitar imagens muito altas */
+   /* Corta a imagem para se ajustar ao espaço sem distorcer */
+  border-radius: 8px; /* Bordas arredondadas para as imagens */
+
+  background-position: top top;
+  background-size: cover; 
+  background-attachment: fixed;
+
+ 
+}
+
+
+.card ul {
+ 
+  padding: 0;
+  list-style: none;
+  margin: 0.5em 0 0;
 }
