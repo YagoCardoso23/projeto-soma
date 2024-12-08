@@ -1,35 +1,44 @@
 const BASE_URL = 'https://swapi.dev/api';
 let currentCategory = '';
-
+let items = [];
+let currentIndex = 0; 
 
 const backgroundImages = JSON.parse(
   document.getElementById('background-images').textContent
 );
 
-
 function loadCategory(category) {
   currentCategory = category;
+  currentIndex = 0; // Reinicia o índice
   document.getElementById('category-title').innerText = `Category: ${category.toUpperCase()}`;
   document.getElementById('card-container').innerHTML = '<p>Loading...</p>';
   document.getElementById('random-button').style.display = 'block';
-  fetchRandomItem();
+  fetchCategoryItems();
 }
 
-
-async function fetchRandomItem() {
+async function fetchCategoryItems() {
   if (!currentCategory) return;
   try {
     const response = await fetch(`${BASE_URL}/${currentCategory}/`);
     const data = await response.json();
-    const randomItem = data.results[Math.floor(Math.random() * data.results.length)];
-    displayCard(randomItem);
-    updateBackground(randomItem.name || randomItem.title);
+    items = data.results; // Armazena todos os itens da categoria
+    displayNextItem(); // Exibe o primeiro item
   } catch (error) {
     document.getElementById('card-container').innerHTML = '<p>Error loading data.</p>';
     console.error('Error fetching data:', error);
   }
 }
 
+function displayNextItem() {
+  if (!items.length) return;
+
+  const item = items[currentIndex]; // Obtém o item atual da sequência
+  displayCard(item);
+  updateBackground(item.name || item.title);
+
+  
+  currentIndex = (currentIndex + 1) % items.length;
+}
 
 function displayCard(data) {
   const cardContainer = document.getElementById('card-container');
@@ -55,11 +64,11 @@ function displayCard(data) {
   `;
 }
 
-
-
 function updateBackground(itemName) {
   const defaultImage = "images/default.jpg";
   const imageUrl = backgroundImages[currentCategory]?.[itemName] || defaultImage;
   document.body.style.backgroundImage = `url('${imageUrl}')`;
 }
 
+
+document.getElementById('random-button').addEventListener('click', displayNextItem);
